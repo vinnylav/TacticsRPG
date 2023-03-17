@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://byi7yy2sl1eu6"]
+
+[ext_resource type="PackedScene" uid="uid://dsi7b1lgmejja" path="res://Map1.tscn" id="1_tp8bf"]
+[ext_resource type="PackedScene" uid="uid://c53hvlfys0qgf" path="res://Unit.tscn" id="2_2rscv"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Node2D" parent="." instance=ExtResource("1_tp8bf")]
+
+[node name="Path2D" parent="." instance=ExtResource("2_2rscv")]
+position = Vector2(1369, 938)
+
+[node name="Camera2D" type="Camera2D" parent="."]
