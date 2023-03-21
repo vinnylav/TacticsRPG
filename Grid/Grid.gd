@@ -4,7 +4,7 @@ class_name Grid
 # The grid's size in rows and columns.
 @export var size := Vector2(20, 20)
 # The size of a cell in pixels.
-@export var cell_size := Vector2(80, 80)
+@export var cell_size := Vector2(128, 128)
 
 # Half of ``cell_size``.
 # We will use this to calculate the center of a grid cell in pixels, on the screen.
@@ -44,10 +44,8 @@ func clamp(grid_position: Vector2) -> Vector2:
 
 # Given Vector2 coordinates, calculates and returns the corresponding integer index. You can use
 # this function to convert 2D coordinates to a 1D array's indices.
-#
-# There are two cases where you need to convert coordinates like so:
-# 1. We'll need it for the AStar algorithm, which requires a unique index for each point on the
+# We'll need it for the AStar algorithm, which requires a unique index for each point on the
 # graph it uses to find a path.
-# 2. You can use it for performance. More on that below.
+
 func as_index(cell: Vector2) -> int:
 	return int(cell.x + size.x * cell.y)

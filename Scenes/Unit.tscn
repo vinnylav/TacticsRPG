@@ -1,0 +1,78 @@
+[gd_scene load_steps=8 format=3 uid="uid://ddm31q3ey85tp"]
+
+[ext_resource type="Script" path="res://Scripts/Hero/Unit.gd" id="1_mgt4n"]
+[ext_resource type="Texture2D" uid="uid://dq6x6r7q4oare" path="res://Sprites/Characters/Heros/character_shadow.png" id="2_g70sx"]
+[ext_resource type="Texture2D" uid="uid://dbsmyp5fy23fp" path="res://Sprites/Characters/Heros/character_squareYellow.png" id="3_ojgow"]
+
+[sub_resource type="Animation" id="Animation_0nep8"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7bclk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8qtev"]
+resource_name = "selected"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1.2, 1.2, 1.2, 0.7)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mg67y"]
+_data = {
+"RESET": SubResource("Animation_7bclk"),
+"idle": SubResource("Animation_0nep8"),
+"selected": SubResource("Animation_8qtev")
+}
+
+[node name="Unit" type="Path2D"]
+script = ExtResource("1_mgt4n")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+rotates = false
+loop = false
+
+[node name="Shadow" type="Sprite2D" parent="PathFollow2D"]
+texture = ExtResource("2_g70sx")
+
+[node name="Sprite" type="Sprite2D" parent="PathFollow2D"]
+texture = ExtResource("3_ojgow")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../PathFollow2D/Sprite")
+libraries = {
+"": SubResource("AnimationLibrary_mg67y")
+}
