@@ -9,39 +9,24 @@ class_name Unit
 # Texture representing the unit.
 @export var skin: Texture:
 	set = set_skin
-	get:
-		return skin
 # Depending on sprite size, we need to offset it so
 # the sprite aligns with the shadow.
 @export var skin_offset := Vector2.ZERO:
-	set (value):
-		set_skin_offset(value)
-	get:
-		return skin_offset
+	set = set_skin_offset
 # Max Move speed in pixels, when it's moving along a path.
 @export var move_speed := 600.0
 
 # Coordinates of the grid's cell the unit is on.
 var cell := Vector2.ZERO:
-	set (value):
-		set_cell(value)
-	get:
-		return cell
-		
+	set = set_cell
 # Toggles the "selected" animation on the unit.
 var is_selected := false:
-	set (value):
-		set_is_selected(value)
-	get:
-		return is_selected
+	set = set_is_selected
 
 # Through its setter function, the `_is_walking` property toggles processing for this unit.
 # See `_set_is_walking()` at the bottom of this code snippet.
 var _is_walking := false:
-	set (value):
-		_set_is_walking(value)
-	get:
-		return _is_walking
+	set = _set_is_walking
 
 @onready var _sprite: Sprite2D = $PathFollow2D/Sprite
 @onready var _anim_player: AnimationPlayer = $AnimationPlayer
