@@ -8,25 +8,40 @@ class_name Unit
 @export var move_range := 8
 # Texture representing the unit.
 @export var skin: Texture:
-	set = set_skin
+	set(value):
+		skin = await set_skin(value)
+	get:
+		return skin
 # Depending on sprite size, we need to offset it so
 # the sprite aligns with the shadow.
 @export var skin_offset := Vector2.ZERO:
-	set = set_skin_offset
+	set(value):
+		skin_offset = await set_skin_offset(value)
+	get:
+		return skin_offset
 # Max Move speed in pixels, when it's moving along a path.
 @export var move_speed := 600.0
 
 # Coordinates of the grid's cell the unit is on.
 var cell := Vector2.ZERO:
-	set = set_cell
+	set(value):
+		cell = await set_cell(value)
+	get:
+		return cell
 # Toggles the "selected" animation on the unit.
 var is_selected := false:
-	set = set_is_selected
+	set(value):
+		is_selected = await set_is_selected(value)
+	get:
+		return is_selected
 
 # Through its setter function, the `_is_walking` property toggles processing for this unit.
 # See `_set_is_walking()` at the bottom of this code snippet.
 var _is_walking := false:
-	set = _set_is_walking
+	set(value):
+		_is_walking = await _set_is_walking(value)
+	get:
+		return _is_walking
 
 @onready var _sprite: Sprite2D = $PathFollow2D/Sprite
 @onready var _anim_player: AnimationPlayer = $AnimationPlayer
@@ -43,6 +58,8 @@ func set_is_selected(value: bool):
 		_anim_player.play("selected")
 	else:
 		_anim_player.play("idle")
+	
+	return value
 
 # Both setters below manipulate the unit's Sprite node.
 # Here, we update the sprite's texture.
@@ -53,20 +70,26 @@ func set_skin(value: Texture):
 	# update the sprite's properties.
 	if not _sprite:
 		# The yield keyword allows us to wait until the unit node's `_ready()` callback ended.
-		await("ready")
+		await ready
 	_sprite.texture = value
+	
+	return value
 
 
 func set_skin_offset(value: Vector2):
 	skin_offset = value
 	if not _sprite:
-		await("ready")
+		await ready
 	_sprite.position = value
+	
+	return value
 
 
 func _set_is_walking(value: bool):
 	_is_walking = value
 	set_process(_is_walking)
+	
+	return value
 
 # ----- Smooth Movement Logic
 # Emitted when the unit reaches the end of a path along which it was walking.
@@ -98,12 +121,13 @@ func _ready():
 func _process(delta: float):
 	# Every frame, the `PathFollow2D.offset` property moves the sprites along the `curve`.
 	# The great thing about this is it moves an exact number of pixels taking turns into account.
-	_path_follow.offset += move_speed * delta
+	_path_follow.h_offset += move_speed * delta
+	_path_follow.v_offset += move_speed * delta
 
 	# When we increase the `offset` above, the `unit_offset` also updates. It represents how far you are along the `curve` in percent,
 	# where a value of `1.0` means you reached the end.
 	# When that is the case, the unit is done moving.
-	if _path_follow.unit_offset >= 1.0:
+	if _path_follow.progress >= 1.0:
 		# Setting `_is_walking` to `false` also turns off processing.
 		self._is_walking = false
 		# Below, we reset the offset to `0.0`, which snaps the sprites back to the Unit node's
