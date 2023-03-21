@@ -53,7 +53,6 @@ func set_cell(value: Vector2):
 	
 # The `is_selected` property toggles playback of the "selected" animation.
 func set_is_selected(value: bool):
-	is_selected = value
 	if is_selected:
 		_anim_player.play("selected")
 	else:
@@ -64,7 +63,6 @@ func set_is_selected(value: bool):
 # Both setters below manipulate the unit's Sprite node.
 # Here, we update the sprite's texture.
 func set_skin(value: Texture):
-	skin = value
 	# Setter functions are called during the node's `_init()` callback, before they entered the
 	# tree. At that point in time, the `_sprite` variable is `null`. If so, we have to wait to
 	# update the sprite's properties.
@@ -77,7 +75,6 @@ func set_skin(value: Texture):
 
 
 func set_skin_offset(value: Vector2):
-	skin_offset = value
 	if not _sprite:
 		await ready
 	_sprite.position = value
@@ -86,7 +83,6 @@ func set_skin_offset(value: Vector2):
 
 
 func _set_is_walking(value: bool):
-	_is_walking = value
 	set_process(_is_walking)
 	
 	return value
