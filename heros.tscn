@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cs5ks35tq511p"]
+
+[ext_resource type="PackedScene" uid="uid://1rcq5uq4tvod" path="res://Orc_Rig.tscn" id="1_0ngfm"]
+[ext_resource type="PackedScene" uid="uid://miqixy6nvmxf" path="res://Pirate_Rig.tscn" id="2_ypney"]
+
+[node name="Heros" type="Node2D"]
+
+[node name="OrcRig" parent="." instance=ExtResource("1_0ngfm")]
+
+[node name="PirateRig" parent="." instance=ExtResource("2_ypney")]
+position = Vector2(402, 0)

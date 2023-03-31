@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxp7x6b5ml7hi"]
+
+[ext_resource type="Script" path="res://CharacterSelect.gd" id="1_3fuso"]
+[ext_resource type="PackedScene" uid="uid://1rcq5uq4tvod" path="res://Orc_Rig.tscn" id="1_bkkp7"]
+
+[node name="CharSelectMain" type="Node2D"]
+script = ExtResource("1_3fuso")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="UI"]
+modulate = Color(1, 1, 1, 0.372549)
+layout_mode = 0
+offset_right = 1163.0
+offset_bottom = 663.0
+
+[node name="Control" type="Control" parent="UI"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 70.0
+offset_top = 522.0
+offset_right = 70.0
+offset_bottom = 522.0
+grow_vertical = 0
+
+[node name="PreviousButton" type="Button" parent="UI/Control"]
+layout_mode = 0
+text = "Prev"
+
+[node name="NextButton" type="Button" parent="UI/Control"]
+layout_mode = 0
+offset_left = 315.0
+offset_right = 360.0
+offset_bottom = 31.0
+text = "Next"
+
+[node name="Label" type="Label" parent="UI/Control"]
+layout_mode = 0
+offset_left = 524.0
+offset_top = -445.0
+offset_right = 983.0
+offset_bottom = 30.0
+text = "Name"
+
+[node name="Node2D" type="Node2D" parent="UI"]
+
+[node name="OrcRig" parent="UI/Node2D" instance=ExtResource("1_bkkp7")]
+position = Vector2(266, 345)
+scale = Vector2(0.8, 0.8)

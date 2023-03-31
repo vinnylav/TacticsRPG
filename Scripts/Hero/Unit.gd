@@ -63,7 +63,7 @@ func set_cell(value: Vector2) -> void:
 
 
 # The `is_selected` property toggles playback of the "selected" animation.
-func set_is_selected(value: bool) -> void:
+func set_is_selected(_value: bool) -> void:
 	if is_selected:
 		_anim_player.play("selected")
 	else:
