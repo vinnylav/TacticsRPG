@@ -17,4 +17,4 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Heros="*res://heros.tscn"
+Heros="*res://Global/Heros.gd"

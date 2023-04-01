@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxp7x6b5ml7hi"]
+[gd_scene load_steps=2 format=3 uid="uid://dxp7x6b5ml7hi"]
 
 [ext_resource type="Script" path="res://CharacterSelect.gd" id="1_3fuso"]
-[ext_resource type="PackedScene" uid="uid://1rcq5uq4tvod" path="res://Orc_Rig.tscn" id="1_bkkp7"]
 
 [node name="CharSelectMain" type="Node2D"]
 script = ExtResource("1_3fuso")
@@ -48,8 +47,5 @@ offset_right = 983.0
 offset_bottom = 30.0
 text = "Name"
 
-[node name="Node2D" type="Node2D" parent="UI"]
-
-[node name="OrcRig" parent="UI/Node2D" instance=ExtResource("1_bkkp7")]
-position = Vector2(266, 345)
-scale = Vector2(0.8, 0.8)
+[node name="HeroHolder" type="Node2D" parent="UI"]
+position = Vector2(262, 360)

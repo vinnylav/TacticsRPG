@@ -10,14 +10,12 @@ func _ready():
 func _process(delta):
 	match Heros.characterOptions:
 		0:
-			get_node("$UI/Node2D").get_child()
+			get_node("UI/HeroHolder").add_child("res://Orc_Rig.tscn")
 
 
 func _on_next_button_pressed():
-	if Heros.characterOptions > 0:
-		Heros.characterOptions += 1
+	pass
 
 
 func _on_previous_button_pressed():
-	if Heros.characterOptions < 8:
-		Heros.characterOptions -= 1
+	pass
