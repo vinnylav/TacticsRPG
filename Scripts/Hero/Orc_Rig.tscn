@@ -1,7 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://1rcq5uq4tvod"]
+[gd_scene load_steps=13 format=3]
 
 [ext_resource type="Texture2D" uid="uid://bd6mpvht101x" path="res://Sprites/Heros/Orc/OrcChest.png" id="1_87afh"]
-[ext_resource type="Script" path="res://Orc_Rig.gd" id="1_g4fjh"]
+[ext_resource type="Script" path="res://Scripts/Hero/Orc_Rig.gd" id="1_g4fjh"]
 [ext_resource type="Texture2D" uid="uid://bivhv083smpmw" path="res://Sprites/Heros/Orc/OrcHead.png" id="2_gun0o"]
 [ext_resource type="Texture2D" uid="uid://fg42r5nfkpe8" path="res://Sprites/Heros/Orc/OrcFace.png" id="3_t8mqh"]
 [ext_resource type="Texture2D" uid="uid://b6yxgl8p27yys" path="res://Sprites/Heros/Orc/OrcFArm.png" id="4_hrem5"]

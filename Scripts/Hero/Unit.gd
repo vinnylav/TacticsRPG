@@ -5,11 +5,10 @@ class_name Unit
 # Preload the `Grid.tres` resource you created in the previous part.
 @export var grid: Resource = preload("res://Grid/Grid.tres")
 # Distance to which the unit can walk in cells.
-# We'll use this to limit the cells the unit can move to.
+
 @export var move_range := 6
 # Texture representing the unit.
-# With the `tool` mode, assigning a new texture to this property in the inspector will update the
-# unit's sprite instantly. See `set_skin()` below.
+
 @export var skin : Texture:
 	set(value):
 		skin = value

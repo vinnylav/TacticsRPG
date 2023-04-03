@@ -5,17 +5,20 @@ extends Node2D
 func _ready():
 	pass # Replace with function body.
 
-
+var orchero = "res://Scripts/Hero/Orc_Rig.tscn"
+var piratehero = "res://Scripts/Hero/Pirate_Rig.tscn"
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	match Heros.characterOptions:
 		0:
-			get_node("UI/HeroHolder").add_child("res://Orc_Rig.tscn")
+			$UI/HeroHolder.add_child(orchero)
+		1:
+			$UI/HeroHolder.add_child(piratehero)
 
 
 func _on_next_button_pressed():
-	pass
+	$UI/HeroHolder.add_child(orchero)
 
 
 func _on_previous_button_pressed():
-	pass
+	$UI/HeroHolder.add_child(piratehero)

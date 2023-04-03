@@ -1,7 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://miqixy6nvmxf"]
+[gd_scene load_steps=15 format=3]
 
 [ext_resource type="Texture2D" uid="uid://cb1ccauw548rp" path="res://Sprites/Heros/Pirate/PirateAll.png" id="1_0epvp"]
-[ext_resource type="Script" path="res://Pirate_Rig.gd" id="1_8d0wo"]
+[ext_resource type="Script" path="res://Scripts/Hero/Pirate_Rig.gd" id="1_8d0wo"]
 [ext_resource type="Texture2D" uid="uid://bsxhryjlhpbue" path="res://Sprites/Heros/Pirate/PirateChest.png" id="2_jhh8d"]
 [ext_resource type="Texture2D" uid="uid://csyf6q7j4gesx" path="res://Sprites/Heros/Pirate/PirateHead.png" id="3_3vynb"]
 [ext_resource type="Texture2D" uid="uid://2xvwjc05n655" path="res://Sprites/Heros/Pirate/PirateFace.png" id="4_mi20j"]
