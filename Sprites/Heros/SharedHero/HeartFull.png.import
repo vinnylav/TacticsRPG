@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dg068dpbex22m"
-path="res://.godot/imported/character_squarePurple.png-a11d048698e66681848fa98623bae1bf.ctex"
+uid="uid://clttorw6amrha"
+path="res://.godot/imported/HeartFull.png-496df131f97ee4aad686cfa6810bbd9d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Characters/Heros/character_squarePurple.png"
-dest_files=["res://.godot/imported/character_squarePurple.png-a11d048698e66681848fa98623bae1bf.ctex"]
+source_file="res://Sprites/Heros/SharedHero/HeartFull.png"
+dest_files=["res://.godot/imported/HeartFull.png-496df131f97ee4aad686cfa6810bbd9d.ctex"]
 
 [params]
 

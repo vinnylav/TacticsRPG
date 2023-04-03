@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbsmyp5fy23fp"
-path="res://.godot/imported/character_squareYellow.png-db6fb6f9ffb72b35626e604f2e29ceea.ctex"
+uid="uid://b7lh7bvqmhc7v"
+path="res://.godot/imported/Zone1.png-5eee12a921e60d3165f8af2f5a6f93e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Characters/Heros/character_squareYellow.png"
-dest_files=["res://.godot/imported/character_squareYellow.png-db6fb6f9ffb72b35626e604f2e29ceea.ctex"]
+source_file="res://Environment/Zone1.png"
+dest_files=["res://.godot/imported/Zone1.png-5eee12a921e60d3165f8af2f5a6f93e7.ctex"]
 
 [params]
 

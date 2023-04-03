@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3]
+[gd_scene load_steps=11 format=3 uid="uid://dkuw2wchv62p6"]
 
 [ext_resource type="Texture2D" uid="uid://bd6mpvht101x" path="res://Sprites/Heros/Orc/OrcChest.png" id="1_87afh"]
 [ext_resource type="Script" path="res://Scripts/Hero/Orc_Rig.gd" id="1_g4fjh"]
@@ -7,9 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://b6yxgl8p27yys" path="res://Sprites/Heros/Orc/OrcFArm.png" id="4_hrem5"]
 [ext_resource type="Texture2D" uid="uid://x1nlgycf5lbr" path="res://Sprites/Heros/Orc/OrcLegs.png" id="5_j8ulo"]
 [ext_resource type="Texture2D" uid="uid://bcf4572ldboau" path="res://Sprites/Heros/Orc/OrcBArm.png" id="6_bhljx"]
-[ext_resource type="Texture2D" uid="uid://cpomvw2u15k76" path="res://Sprites/Heros/Orc/ORCOrc.png" id="7_tlr0w"]
-
-[sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_hyj4w"]
 
 [sub_resource type="Animation" id="Animation_uxwpx"]
 resource_name = "Idle"
@@ -421,19 +418,20 @@ _data = {
 "RESET": SubResource("Animation_ro8q6")
 }
 
-[node name="OrcRig" type="Node2D"]
+[node name="OrcRig" type="Node2D" groups=["player"]]
 script = ExtResource("1_g4fjh")
 
 [node name="Skeleton2D" type="Skeleton2D" parent="."]
-modification_stack = SubResource("SkeletonModificationStack2D_hyj4w")
 
 [node name="ChestBone2D" type="Bone2D" parent="Skeleton2D"]
 rest = Transform2D(1, 0, 0, 1, 0, 0)
 
 [node name="Chest" type="Sprite2D" parent="Skeleton2D/ChestBone2D"]
+z_index = 1
 texture = ExtResource("1_87afh")
 
 [node name="HeadBone2D" type="Bone2D" parent="Skeleton2D/ChestBone2D"]
+z_index = 1
 position = Vector2(27, -71)
 scale = Vector2(0.999859, 0.999859)
 rest = Transform2D(1, 0, 0, 1, 28, -146)
@@ -455,33 +453,25 @@ position = Vector2(-90, -55)
 rest = Transform2D(1, 0, 0, 1, -117, 37)
 
 [node name="FArm" type="Sprite2D" parent="Skeleton2D/ChestBone2D/FArmBone2D"]
+z_index = 1
 position = Vector2(-28.1765, 93.2528)
 texture = ExtResource("4_hrem5")
-
-[node name="LegsBone2D" type="Bone2D" parent="Skeleton2D/ChestBone2D"]
-position = Vector2(-7, 81)
-rest = Transform2D(1, 0, 0, 1, -8, 125)
-
-[node name="Legs" type="Sprite2D" parent="Skeleton2D/ChestBone2D/LegsBone2D"]
-z_index = -1
-position = Vector2(-3, 43)
-texture = ExtResource("5_j8ulo")
 
 [node name="BArmBone2D" type="Bone2D" parent="Skeleton2D/ChestBone2D"]
 position = Vector2(101, -45)
 rest = Transform2D(1, 0, 0, 1, 108, 48)
 
 [node name="BArm" type="Sprite2D" parent="Skeleton2D/ChestBone2D/BArmBone2D"]
-z_index = -2
 position = Vector2(8, 92)
 texture = ExtResource("6_bhljx")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-modulate = Color(1, 1, 1, 0.184314)
-position = Vector2(-7, -30)
-texture = ExtResource("7_tlr0w")
-metadata/_edit_lock_ = true
+[node name="LegsBone2D" type="Bone2D" parent="Skeleton2D/ChestBone2D"]
+position = Vector2(-7, 81)
+rest = Transform2D(1, 0, 0, 1, -8, 125)
+
+[node name="Legs" type="Sprite2D" parent="Skeleton2D/ChestBone2D/LegsBone2D"]
+position = Vector2(-3, 43)
+texture = ExtResource("5_j8ulo")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Skeleton2D")

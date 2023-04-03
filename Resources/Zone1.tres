@@ -1,9 +1,9 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://c8g815tgyb5he"]
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://xjiw2b3c7wdu"]
 
-[ext_resource type="Texture2D" uid="uid://b7lh7bvqmhc7v" path="res://Environment/tilesheet@2.png" id="1_fjjva"]
+[ext_resource type="Texture2D" uid="uid://b7lh7bvqmhc7v" path="res://Environment/Zone1.png" id="1_4o1fo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pp5of"]
-texture = ExtResource("1_fjjva")
+texture = ExtResource("1_4o1fo")
 texture_region_size = Vector2i(128, 128)
 0:3/0 = 0
 0:3/0/terrain_set = 0
@@ -65,6 +65,12 @@ texture_region_size = Vector2i(128, 128)
 0:0/0/terrains_peering_bit/top_left_corner = 0
 0:0/0/terrains_peering_bit/top_side = 0
 0:0/0/terrains_peering_bit/top_right_corner = 0
+7:0/0 = 0
+1:0/0 = 0
+1:1/0 = 0
+1:2/0 = 0
+4:6/0 = 0
+0:7/0 = 0
 
 [resource]
 tile_size = Vector2i(128, 128)

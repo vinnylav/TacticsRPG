@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ej6qhq1kfry8"
-path="res://.godot/imported/character_squareRed.png-4387cdebb9087065c98c80b62623198d.ctex"
+uid="uid://ccpe4uyeu8ku6"
+path="res://.godot/imported/BatWingTop.png-6fe0432c58505a744bc32f44a1f7723f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Characters/Heros/character_squareRed.png"
-dest_files=["res://.godot/imported/character_squareRed.png-4387cdebb9087065c98c80b62623198d.ctex"]
+source_file="res://Sprites/Mobs/BatEye/BatWingTop.png"
+dest_files=["res://.godot/imported/BatWingTop.png-6fe0432c58505a744bc32f44a1f7723f.ctex"]
 
 [params]
 

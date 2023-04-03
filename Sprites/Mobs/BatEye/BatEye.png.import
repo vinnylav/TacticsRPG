@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3v10qyucc7g0"
-path="res://.godot/imported/character_squareGreen.png-7ffa482c893523187cec8f5a31ee501a.ctex"
+uid="uid://o3a67lqaydx4"
+path="res://.godot/imported/BatEye.png-2f645589f6d3bd586a6f65b94ba0f7af.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Characters/Heros/character_squareGreen.png"
-dest_files=["res://.godot/imported/character_squareGreen.png-7ffa482c893523187cec8f5a31ee501a.ctex"]
+source_file="res://Sprites/Mobs/BatEye/BatEye.png"
+dest_files=["res://.godot/imported/BatEye.png-2f645589f6d3bd586a6f65b94ba0f7af.ctex"]
 
 [params]
 

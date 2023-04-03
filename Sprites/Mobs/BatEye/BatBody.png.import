@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7lh7bvqmhc7v"
-path="res://.godot/imported/tilesheet@2.png-a1b213e6f4f96d8a8231a93f622f7f13.ctex"
+uid="uid://b6jnlmo6aa3c8"
+path="res://.godot/imported/BatBody.png-57bbe61baab4955cc04d31080bdc2b50.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Environment/tilesheet@2.png"
-dest_files=["res://.godot/imported/tilesheet@2.png-a1b213e6f4f96d8a8231a93f622f7f13.ctex"]
+source_file="res://Sprites/Mobs/BatEye/BatBody.png"
+dest_files=["res://.godot/imported/BatBody.png-57bbe61baab4955cc04d31080bdc2b50.ctex"]
 
 [params]
 

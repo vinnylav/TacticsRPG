@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bv8k1niutf38j"]
+
+[ext_resource type="Script" path="res://BatEnemy.gd" id="1_wpwkr"]
+[ext_resource type="PackedScene" uid="uid://csja8aewfagir" path="res://Scripts/Mobs/bat_rig.tscn" id="2_bgojx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_37j2u"]
+radius = 85.0
+
+[node name="BatEnemy" type="CharacterBody2D"]
+collision_layer = 0
+script = ExtResource("1_wpwkr")
+
+[node name="BatRig" parent="." instance=ExtResource("2_bgojx")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -26)
+shape = SubResource("CircleShape2D_37j2u")

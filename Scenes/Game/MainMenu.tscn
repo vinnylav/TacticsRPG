@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cxumq0i3iirpn"]
+[gd_scene load_steps=2 format=3 uid="uid://fjmvmbetc1cc"]
 
-[ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_aco7p"]
+[ext_resource type="Script" path="res://Scripts/Game/MainMenu.gd" id="1_4a8xp"]
 
 [node name="Panel" type="Control"]
 layout_mode = 3
@@ -23,7 +23,7 @@ offset_right = 72.5
 offset_bottom = 33.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_aco7p")
+script = ExtResource("1_4a8xp")
 
 [node name="StartButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2

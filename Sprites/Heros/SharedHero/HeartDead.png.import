@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dq6x6r7q4oare"
-path="res://.godot/imported/character_shadow.png-9f95c5f5c3b6469d71e21d5a4ca9abbc.ctex"
+uid="uid://daxy3swcbufu8"
+path="res://.godot/imported/HeartDead.png-62fe0dfa4c162a204cc88346552aa32c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Characters/Heros/character_shadow.png"
-dest_files=["res://.godot/imported/character_shadow.png-9f95c5f5c3b6469d71e21d5a4ca9abbc.ctex"]
+source_file="res://Sprites/Heros/SharedHero/HeartDead.png"
+dest_files=["res://.godot/imported/HeartDead.png-62fe0dfa4c162a204cc88346552aa32c.ctex"]
 
 [params]
 
