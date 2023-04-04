@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://oh7ateiwuply"]
+
+[ext_resource type="Script" path="res://Scenes/Mobs/BatEnemy.gd" id="1_04vli"]
+[ext_resource type="PackedScene" uid="uid://j6j3tq4gb3vy" path="res://Scenes/Components/health_component.tscn" id="2_bdktm"]
+[ext_resource type="PackedScene" uid="uid://77441h74nvss" path="res://Scenes/Mobs/bat_rig.tscn" id="2_bgojx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h040k"]
+radius = 11.3737
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7atud"]
+size = Vector2(197.418, 142.385)
+
+[node name="BatEnemy" type="CharacterBody2D" groups=["enemy"]]
+scale = Vector2(0.5, 0.5)
+collision_layer = 8
+collision_mask = 9
+motion_mode = 1
+script = ExtResource("1_04vli")
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_bdktm")]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -20)
+scale = Vector2(10.64, 8.24)
+shape = SubResource("CircleShape2D_h040k")
+
+[node name="BatRig" parent="." instance=ExtResource("2_bgojx")]
+position = Vector2(0, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -12)
+scale = Vector2(0.780071, 0.93409)
+shape = SubResource("RectangleShape2D_7atud")

@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://1i73rg87pl7"]
+
+[ext_resource type="Script" path="res://Scenes/Game/CharatcerSelect/CharacterSelect.gd" id="1_hjkbk"]
+[ext_resource type="PackedScene" path="res://Scenes/Hero/Pirate_Rig.tscn" id="2_d4o04"]
+[ext_resource type="PackedScene" path="res://Scenes/Hero/Orc_Rig.tscn" id="3_ri14p"]
+
+[node name="CharSelectMain" type="Node2D"]
+script = ExtResource("1_hjkbk")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1159.0
+offset_bottom = 647.0
+
+[node name="Panel" type="Panel" parent="UI"]
+modulate = Color(1, 1, 1, 0.372549)
+layout_mode = 0
+offset_right = 1163.0
+offset_bottom = 663.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = -58.0
+offset_right = 96.0
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="NextButton" type="Button" parent="UI/HBoxContainer"]
+layout_mode = 2
+text = "Next"
+
+[node name="SelectHeroButton" type="Button" parent="UI/HBoxContainer"]
+layout_mode = 2
+text = "Select Hero"
+
+[node name="PreviousButton" type="Button" parent="UI/HBoxContainer"]
+layout_mode = 2
+text = "Prev"
+
+[node name="Heros" type="Node2D" parent="."]
+position = Vector2(517, 331)
+scale = Vector2(0.36, 0.36)
+
+[node name="PirateRig" parent="Heros" instance=ExtResource("2_d4o04")]
+
+[node name="OrcRig" parent="Heros" instance=ExtResource("3_ri14p")]
+position = Vector2(346, 0)
+
+[connection signal="pressed" from="UI/HBoxContainer/SelectHeroButton" to="." method="_on_select_hero_button_pressed"]

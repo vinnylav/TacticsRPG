@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsot1ehkt8wuh"]
+
+[ext_resource type="Script" path="res://Scenes/Game/Managers/exp_manager.gd" id="1_7fa60"]
+
+[node name="ExpManager" type="Node"]
+script = ExtResource("1_7fa60")

@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://c0jy2ykx17phr"]
+
+[ext_resource type="PackedScene" path="res://Scenes/Abilities/sword_ability/sword_ability_controller.tscn" id="1_dicnp"]
+[ext_resource type="PackedScene" path="res://Scenes/Hero/Orc_Rig.tscn" id="1_k2kat"]
+[ext_resource type="Script" path="res://Scenes/Hero/Player.gd" id="1_wvmni"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0lp7b"]
+radius = 128.0
+height = 380.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eciyk"]
+radius = 442.0
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+scale = Vector2(0.5, 0.5)
+collision_layer = 0
+motion_mode = 1
+script = ExtResource("1_wvmni")
+
+[node name="AbilityManager" type="Node" parent="."]
+
+[node name="SwordAbilityController" parent="AbilityManager" instance=ExtResource("1_dicnp")]
+MAX_RANGE = 550.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 30)
+shape = SubResource("CapsuleShape2D_0lp7b")
+
+[node name="OrcRig" parent="." instance=ExtResource("1_k2kat")]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_eciyk")

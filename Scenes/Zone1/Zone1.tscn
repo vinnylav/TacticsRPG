@@ -1,22 +1,52 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhfhwuqcqejta"]
+[gd_scene load_steps=11 format=3 uid="uid://dj14n0s6u6kd5"]
 
-[ext_resource type="PackedScene" uid="uid://bhaj0nha65wi8" path="res://Scenes/Zone1/Map1.tscn" id="1_tp8bf"]
-[ext_resource type="PackedScene" uid="uid://cffmlgq3i4s56" path="res://Scenes/Game/GameCamera.tscn" id="4_e4qq3"]
-[ext_resource type="PackedScene" uid="uid://cdq56qk8y5myx" path="res://Scripts/Hero/Player.tscn" id="5_81cr1"]
-[ext_resource type="PackedScene" uid="uid://bv8k1niutf38j" path="res://Scripts/Mobs/bat_enemy.tscn" id="5_bcs48"]
-[ext_resource type="PackedScene" uid="uid://ghjixuo4n353" path="res://Scenes/Game/zone_ui.tscn" id="6_6hbc1"]
+[ext_resource type="PackedScene" uid="uid://13sxqwujitu4" path="res://Scenes/Game/Managers/enemy_manager.tscn" id="1_7d0hx"]
+[ext_resource type="PackedScene" path="res://Scenes/Game/GameCamera/GameCamera.tscn" id="1_36utb"]
+[ext_resource type="PackedScene" uid="uid://boh5anpu0hmf3" path="res://Scenes/Game/UI/arena_timer_ui.tscn" id="1_l4o64"]
+[ext_resource type="PackedScene" uid="uid://86oiv2uingi3" path="res://Scenes/Game/Managers/arena_time_manager.tscn" id="2_6jnpo"]
+[ext_resource type="PackedScene" uid="uid://bw48muarmf5va" path="res://Scenes/Zone1/Map1.tscn" id="2_g4t0l"]
+[ext_resource type="PackedScene" uid="uid://oh7ateiwuply" path="res://Scenes/Mobs/bat_enemy.tscn" id="4_kqv2h"]
+[ext_resource type="PackedScene" uid="uid://c0jy2ykx17phr" path="res://Scenes/Hero/Player.tscn" id="4_oy78i"]
+[ext_resource type="PackedScene" uid="uid://dsot1ehkt8wuh" path="res://Scenes/Game/Managers/exp_manager.tscn" id="5_5wrah"]
+[ext_resource type="PackedScene" path="res://Scenes/Game/UI/game_ui.tscn" id="5_a68s2"]
+[ext_resource type="PackedScene" uid="uid://f78h2lcq2cpb" path="res://Scenes/Drops/exp_small.tscn" id="9_osi8g"]
 
 [node name="Main" type="Node2D"]
 
-[node name="GameCamera" parent="." instance=ExtResource("4_e4qq3")]
+[node name="ArenaTimerUI" parent="." instance=ExtResource("1_l4o64")]
 
-[node name="Map" parent="." instance=ExtResource("1_tp8bf")]
+[node name="ArenaTimeManager" parent="." instance=ExtResource("2_6jnpo")]
 
-[node name="BatEnemy" parent="." instance=ExtResource("5_bcs48")]
-position = Vector2(3843, 1185)
-scale = Vector2(0.560002, 0.560002)
+[node name="EnemyManager" parent="." instance=ExtResource("1_7d0hx")]
+bat_enemy_scene = ExtResource("4_kqv2h")
 
-[node name="Player" parent="." instance=ExtResource("5_81cr1")]
-position = Vector2(2496, 1069)
+[node name="ExpManager" parent="." instance=ExtResource("5_5wrah")]
 
-[node name="ZoneUI" parent="." instance=ExtResource("6_6hbc1")]
+[node name="GameCamera" parent="." instance=ExtResource("1_36utb")]
+
+[node name="Map" parent="." instance=ExtResource("2_g4t0l")]
+
+[node name="Player" parent="." instance=ExtResource("4_oy78i")]
+
+[node name="ZoneUI" parent="." instance=ExtResource("5_a68s2")]
+
+[node name="ExpSmall" parent="." instance=ExtResource("9_osi8g")]
+position = Vector2(767, -484)
+
+[node name="ExpSmall2" parent="." instance=ExtResource("9_osi8g")]
+position = Vector2(170, -736)
+
+[node name="ExpSmall3" parent="." instance=ExtResource("9_osi8g")]
+position = Vector2(-607, -517)
+
+[node name="ExpSmall4" parent="." instance=ExtResource("9_osi8g")]
+position = Vector2(-895, 224)
+
+[node name="ExpSmall5" parent="." instance=ExtResource("9_osi8g")]
+position = Vector2(-376, 983)
+
+[node name="ExpSmall6" parent="." instance=ExtResource("9_osi8g")]
+position = Vector2(674, 830)
+
+[node name="ExpSmall7" parent="." instance=ExtResource("9_osi8g")]
+position = Vector2(1046, 182)
