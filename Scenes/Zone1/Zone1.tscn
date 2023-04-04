@@ -1,14 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhfhwuqcqejta"]
+[gd_scene load_steps=6 format=3 uid="uid://dhfhwuqcqejta"]
 
 [ext_resource type="PackedScene" uid="uid://bhaj0nha65wi8" path="res://Scenes/Zone1/Map1.tscn" id="1_tp8bf"]
-[ext_resource type="PackedScene" uid="uid://dkuw2wchv62p6" path="res://Scripts/Hero/Orc_Rig.tscn" id="2_3a5n4"]
-[ext_resource type="Script" path="res://Scripts/Hero/Player.gd" id="2_p4m73"]
 [ext_resource type="PackedScene" uid="uid://cffmlgq3i4s56" path="res://Scenes/Game/GameCamera.tscn" id="4_e4qq3"]
+[ext_resource type="PackedScene" uid="uid://cdq56qk8y5myx" path="res://Scripts/Hero/Player.tscn" id="5_81cr1"]
 [ext_resource type="PackedScene" uid="uid://bv8k1niutf38j" path="res://Scripts/Mobs/bat_enemy.tscn" id="5_bcs48"]
 [ext_resource type="PackedScene" uid="uid://ghjixuo4n353" path="res://Scenes/Game/zone_ui.tscn" id="6_6hbc1"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0mleb"]
-size = Vector2(294, 322)
 
 [node name="Main" type="Node2D"]
 
@@ -16,20 +12,11 @@ size = Vector2(294, 322)
 
 [node name="Map" parent="." instance=ExtResource("1_tp8bf")]
 
-[node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(2561, 1175)
-scale = Vector2(0.5, 0.5)
-collision_layer = 0
-script = ExtResource("2_p4m73")
-
-[node name="OrcRig" parent="Player" instance=ExtResource("2_3a5n4")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(-3, 35)
-shape = SubResource("RectangleShape2D_0mleb")
-
 [node name="BatEnemy" parent="." instance=ExtResource("5_bcs48")]
 position = Vector2(3843, 1185)
 scale = Vector2(0.560002, 0.560002)
+
+[node name="Player" parent="." instance=ExtResource("5_81cr1")]
+position = Vector2(2496, 1069)
 
 [node name="ZoneUI" parent="." instance=ExtResource("6_6hbc1")]

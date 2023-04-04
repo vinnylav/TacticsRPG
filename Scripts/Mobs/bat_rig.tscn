@@ -447,8 +447,8 @@ tracks/17/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hr57t"]
 _data = {
-"RESET": SubResource("Animation_f70ra"),
-"idle": SubResource("Animation_0loda")
+"Idle": SubResource("Animation_0loda"),
+"RESET": SubResource("Animation_f70ra")
 }
 
 [node name="BatRig" type="Node2D"]
