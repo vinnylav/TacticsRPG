@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3]
+[gd_scene load_steps=11 format=3 uid="uid://cjt52tskf4fsw"]
 
 [ext_resource type="Texture2D" uid="uid://bd6mpvht101x" path="res://Assets/Sprites/Heros/Orc/OrcChest.png" id="1_87afh"]
 [ext_resource type="Script" path="res://Scenes/Hero/Orc_Rig.gd" id="1_g4fjh"]

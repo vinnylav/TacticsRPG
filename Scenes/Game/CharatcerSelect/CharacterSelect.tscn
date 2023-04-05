@@ -1,23 +1,65 @@
-[gd_scene load_steps=4 format=3 uid="uid://1i73rg87pl7"]
+[gd_scene load_steps=11 format=3 uid="uid://1i73rg87pl7"]
 
 [ext_resource type="Script" path="res://Scenes/Game/CharatcerSelect/CharacterSelect.gd" id="1_hjkbk"]
 [ext_resource type="PackedScene" path="res://Scenes/Hero/Pirate_Rig.tscn" id="2_d4o04"]
-[ext_resource type="PackedScene" path="res://Scenes/Hero/Orc_Rig.tscn" id="3_ri14p"]
+[ext_resource type="PackedScene" uid="uid://cjt52tskf4fsw" path="res://Scenes/Hero/Orc_Rig.tscn" id="3_ri14p"]
+[ext_resource type="Texture2D" uid="uid://cnjpch54df3om" path="res://Assets/Sprites/Heros/Temp/Elf.png" id="4_io4y8"]
+[ext_resource type="Texture2D" uid="uid://dudcuxifsrmqk" path="res://Assets/Sprites/Heros/Temp/Golem.png" id="5_4xnel"]
+[ext_resource type="Texture2D" uid="uid://cewcco327aqbk" path="res://Assets/Sprites/Enviroments/Bar.png" id="6_r65yw"]
+[ext_resource type="Texture2D" uid="uid://dwcoo4q7mcmvm" path="res://Assets/Sprites/Heros/Temp/Man.png" id="6_wkknh"]
+[ext_resource type="Texture2D" uid="uid://cie535ns02rx" path="res://Assets/Sprites/Heros/Temp/Rogue.png" id="7_hmup8"]
+[ext_resource type="Texture2D" uid="uid://f1s2fs2irc48" path="res://Assets/Sprites/Heros/Temp/Priest.png" id="8_k3aes"]
+[ext_resource type="Texture2D" uid="uid://b1jph8xnwynry" path="res://Assets/Sprites/Heros/Temp/Witch.png" id="9_mn64c"]
 
 [node name="CharSelectMain" type="Node2D"]
 script = ExtResource("1_hjkbk")
 
+[node name="Heros" type="Node2D" parent="."]
+position = Vector2(517, 331)
+scale = Vector2(0.36, 0.36)
+
+[node name="PirateRig" parent="Heros" instance=ExtResource("2_d4o04")]
+position = Vector2(-5416.66, 1266.67)
+
+[node name="OrcRig" parent="Heros" instance=ExtResource("3_ri14p")]
+position = Vector2(-2436.11, 950)
+
+[node name="ElfTemp" type="Sprite2D" parent="Heros"]
+position = Vector2(-2358.33, -941.667)
+texture = ExtResource("4_io4y8")
+
+[node name="GolemTemp" type="Sprite2D" parent="Heros"]
+position = Vector2(158.333, 800)
+texture = ExtResource("5_4xnel")
+
+[node name="ManTemp" type="Sprite2D" parent="Heros"]
+position = Vector2(-4525, 1283.33)
+texture = ExtResource("6_wkknh")
+
+[node name="RogueTemp" type="Sprite2D" parent="Heros"]
+position = Vector2(-4808.33, -1458.33)
+texture = ExtResource("7_hmup8")
+
+[node name="PriestTemp" type="Sprite2D" parent="Heros"]
+position = Vector2(-41.667, -975)
+texture = ExtResource("8_k3aes")
+
+[node name="WitchTemp" type="Sprite2D" parent="Heros"]
+position = Vector2(-41.667, -975)
+texture = ExtResource("9_mn64c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_r65yw")
+
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 1159.0
-offset_bottom = 647.0
-
-[node name="Panel" type="Panel" parent="UI"]
-modulate = Color(1, 1, 1, 0.372549)
-layout_mode = 0
-offset_right = 1163.0
-offset_bottom = 663.0
+offset_left = 576.0
+offset_top = 324.0
+offset_right = 576.0
+offset_bottom = 324.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI"]
 layout_mode = 1
@@ -27,9 +69,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -96.0
-offset_top = -58.0
+offset_top = 275.0
 offset_right = 96.0
-offset_bottom = -27.0
+offset_bottom = 306.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -45,13 +87,7 @@ text = "Select Hero"
 layout_mode = 2
 text = "Prev"
 
-[node name="Heros" type="Node2D" parent="."]
-position = Vector2(517, 331)
-scale = Vector2(0.36, 0.36)
-
-[node name="PirateRig" parent="Heros" instance=ExtResource("2_d4o04")]
-
-[node name="OrcRig" parent="Heros" instance=ExtResource("3_ri14p")]
-position = Vector2(346, 0)
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
 
 [connection signal="pressed" from="UI/HBoxContainer/SelectHeroButton" to="." method="_on_select_hero_button_pressed"]

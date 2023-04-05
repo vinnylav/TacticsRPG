@@ -1,25 +1,30 @@
 extends Node2D
 
+@onready var select_camera = $Camera2D
+var char_array [(-2436.11,950),(-5416.664,1266.667)]
+@onready var orc_pos = Vector2(-2436.11,950)
+@onready var pirate_pos = $Heros/PirateRig.global_position
+@onready var elf_pos = $Heros/ElfTemp.global_position
+@onready var golem_pos = $Heros/GolemTemp.global_position
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
-	pass # Replace with function body.
+	select_camera.is_current()
 
-var orcH = "res://Scripts/Hero/Orc_Rig.tscn"
-var pirateH = "res://Scripts/Hero/Pirate_Rig.tscn"
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta):
 	pass
 
 
 func _on_next_button_pressed():
-	pass
+	for n in char_array:
+		char_array += 1
 
 
 func _on_previous_button_pressed():
-	pass
+	select_camera.global_position = pirate_pos
 
 
 func _on_select_hero_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Zone1/Zone1.tscn")
-	pass # Replace with function body.
+	
