@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ciy4kg841dy0a" path="res://Assets/Sprites/Drops/ExpSmall.png" id="1_rp43g"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hoho5"]
-radius = 99.0
+radius = 78.0256
 
 [node name="ExpSmall" type="Node2D"]
 script = ExtResource("1_gj4je")

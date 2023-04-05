@@ -45,7 +45,7 @@ position = Vector2(-41.667, -975)
 texture = ExtResource("8_k3aes")
 
 [node name="WitchTemp" type="Sprite2D" parent="Heros"]
-position = Vector2(-41.667, -975)
+position = Vector2(1841.67, 1166.67)
 texture = ExtResource("9_mn64c")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -53,41 +53,35 @@ z_index = -1
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_r65yw")
 
-[node name="UI" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 576.0
-offset_top = 324.0
-offset_right = 576.0
-offset_bottom = 324.0
+[node name="UI" type="CanvasLayer" parent="."]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI"]
-layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -96.0
-offset_top = 275.0
+offset_top = -39.0
 offset_right = 96.0
-offset_bottom = 306.0
+offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 0
-
-[node name="NextButton" type="Button" parent="UI/HBoxContainer"]
-layout_mode = 2
-text = "Next"
-
-[node name="SelectHeroButton" type="Button" parent="UI/HBoxContainer"]
-layout_mode = 2
-text = "Select Hero"
 
 [node name="PreviousButton" type="Button" parent="UI/HBoxContainer"]
 layout_mode = 2
 text = "Prev"
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(576, 324)
+[node name="SelectHeroButton" type="Button" parent="UI/HBoxContainer"]
+layout_mode = 2
+text = "Select Hero"
 
+[node name="NextButton" type="Button" parent="UI/HBoxContainer"]
+layout_mode = 2
+text = "Next"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="pressed" from="UI/HBoxContainer/PreviousButton" to="." method="_on_previous_button_pressed"]
 [connection signal="pressed" from="UI/HBoxContainer/SelectHeroButton" to="." method="_on_select_hero_button_pressed"]
+[connection signal="pressed" from="UI/HBoxContainer/NextButton" to="." method="_on_next_button_pressed"]
